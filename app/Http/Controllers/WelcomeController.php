@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class WelcomeController extends Controller
@@ -16,6 +17,9 @@ class WelcomeController extends Controller
     {
         
         $colors = ['red', 'green', 'blue'];
-        return Inertia::render('mypage', compact('colors'));
+        // $loggedInUser = auth()->user()->only(['id', 'name', 'email']);
+        $loggedInUser = Auth::user()->toArray();
+        // dd($loggedInUser);
+        return Inertia::render('mypage', compact('colors', 'loggedInUser'));
     }
 }

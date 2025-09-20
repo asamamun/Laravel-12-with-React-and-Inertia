@@ -18,6 +18,18 @@ export type User = {
 };
 
 
+/**
+ * User page
+ * 
+ * This page will show all users in the system, 
+ * and allow administrators to edit or delete users.
+ * 
+ * @param {Object} props - props passed from Inertia
+ * @param {Object} props.auth - the authenticated user
+ * @param {Array<User>} props.users - list of all users in the system
+ * @param {User} props.current - the current user
+ * @return {JSX.Element} - the user page component
+ */
 export default function User() {
     //props get auth automatically
     const { auth,users, current } = usePage().props;
@@ -25,7 +37,7 @@ export default function User() {
     return (
         <AppLayout breadcrumbs={[]}>
             <Head title="All Users" />
-              <h1>welcome {current.name} </h1>
+              <h1>welcome {current?.name} </h1>
               <hr />
               <table className="w-full table-auto border border-gray-200">
                   <thead>

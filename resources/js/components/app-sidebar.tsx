@@ -5,7 +5,7 @@ import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, Sid
 import { dashboard } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
+import { BookCheck, BookmarkCheckIcon, BookOpen, Folder, LayoutGrid } from 'lucide-react';
 import AppLogo from './app-logo';
 
 //all sidebar items
@@ -25,6 +25,11 @@ const mainNavItems: NavItem[] = [
         href: '/users',
         icon: LayoutGrid,
     },
+    {
+        title: 'Event',
+        href: '/events',
+        icon: BookCheck,
+    },
 ];
 
 const footerNavItems: NavItem[] = [
@@ -38,6 +43,12 @@ const footerNavItems: NavItem[] = [
         href: 'https://laravel.com/docs/starter-kits#react',
         icon: BookOpen,
     },
+    {
+        title: 'Laravel Home',
+        href: 'https://laravel.com',
+        icon: BookmarkCheckIcon,
+    },
+
 ];
 
 export function AppSidebar() {

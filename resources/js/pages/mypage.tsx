@@ -12,12 +12,17 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 export default function MyPage() {
     //props get auth automatically
-    const { auth,colors } = usePage().props;
+    const { auth,colors,loggedInUser } = usePage().props;
+    // const [id, name, email] = [loggedInUser.id, loggedInUser.name, loggedInUser.email];
+    // console.log('loggedInUser:', loggedInUser);
+    // console.log('id:', id);
+    // console.log('name:', name);
+    // console.log('email:', email);
 
     return (
         <AppLayout breadcrumbs={[]}>
             <Head title="My page" />
-              <h1>welcome {auth?.name} </h1>
+              <h1>welcome <mark> {loggedInUser.name} </mark></h1>
               {/* link to dashboard */}
               <Link href={dashboard()}>Dashboard</Link> | 
               {/* link to login */}
